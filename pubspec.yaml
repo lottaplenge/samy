@@ -17,6 +17,7 @@ dependencies:
   flutter_bloc: ^8.0.0
   flutter_map: ^1.1.1
   http: ^0.13.4
+  json_theme: ^5.0.2+6
   logger: ^1.1.0
 
 dev_dependencies:
@@ -31,6 +32,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
+    - assets/appainter_theme.json
 
 msix_config:
   display_name: BLoC+MVU Kickstarter App
@@ -38,3 +40,6 @@ msix_config:
   identity_name: com.gmuehlenberg
   msix_version: 1.0.0.0
   capabilities: "internetClient"
+
+  dependencies:
+    json_theme: ^4.0.0

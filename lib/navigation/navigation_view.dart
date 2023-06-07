@@ -24,11 +24,9 @@ class NavigationView extends View<NavigationMessage, NavigationModel, Navigation
           title: Text(
             model.page.name
           ,),
-          backgroundColor: Colors.blue,
           actions: [
             IconButton(
               icon: const Icon(Icons.table_rows),
-              tooltip: 'Menu',
               onPressed: () => dispatch(ToggleMainMenu()),
             ),
           ],

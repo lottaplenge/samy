@@ -28,7 +28,6 @@ class SignUpView extends View<SignUpMessage, SignUpModel, SignUpUpdate> {
                     Container(
                       width: 85,
                       height: 85,
-                      color: Colors.grey[200],
                       alignment: Alignment.center,
                       child: Image.asset('assets/samy_small.png'),
                       /*decoration: BoxDecoration(
@@ -42,14 +41,12 @@ class SignUpView extends View<SignUpMessage, SignUpModel, SignUpUpdate> {
                 ),
                 Text(
                   'Welcome to SAMY',
-                  style: TextStyle(fontSize: 25, color: Colors.blue[900]),
                 ),
                 const SizedBox(
                   height: 10,
                 ),
                 Text(
                   'Sign up to find the perfect place for your youngster',
-                  style: TextStyle(color: Colors.grey[700], fontSize: 18),
                 ),
                 const SizedBox(
                   height: 15,
@@ -146,7 +143,6 @@ class SignUpView extends View<SignUpMessage, SignUpModel, SignUpUpdate> {
                   child: TextButton(
                     style: TextButton.styleFrom(
                       padding: const EdgeInsets.all(15),
-                      backgroundColor: Colors.blue[900],
                     ),
                     onPressed: () {
                       dispatch(
@@ -171,7 +167,6 @@ class SignUpView extends View<SignUpMessage, SignUpModel, SignUpUpdate> {
                     },
                     child: const Text(
                       'Sign Up',
-                      style: TextStyle(color: Colors.white, fontSize: 18),
                     ),
                   ),
                 ),

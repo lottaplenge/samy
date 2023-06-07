@@ -10,6 +10,7 @@ import 'package:flutter/material.dart' hide Page, View;
 class SignInView extends View<SignInMessage, SignInModel, SignInUpdate> {
   const SignInView({Key? key}) : super(key: key);
 
+
   @override
   Widget buildView(SignInModel model) => Scaffold(
         body: SafeArea(
@@ -41,7 +42,6 @@ class SignInView extends View<SignInMessage, SignInModel, SignInUpdate> {
                               ),
                               const Icon(
                                 Icons.settings,
-                                color: Colors.grey,
                                 size: 40,
                               )
                             ],
@@ -51,14 +51,12 @@ class SignInView extends View<SignInMessage, SignInModel, SignInUpdate> {
                           ),
                           Text(
                             'Welcome to SAMY',
-                            style: TextStyle(fontSize: 25, color: Colors.blue[900]),
                           ),
                           const SizedBox(
                             height: 10,
                           ),
                           Text(
                             'Log in to find the perfect place for your youngster',
-                            style: TextStyle(color: Colors.grey[700], fontSize: 18),
                           ),
                         ],
                       ),
@@ -100,14 +98,12 @@ class SignInView extends View<SignInMessage, SignInModel, SignInUpdate> {
                                       TextButton(
                                         style: TextButton.styleFrom(
                                           padding: const EdgeInsets.all(15),
-                                          backgroundColor: Colors.blue[900],
                                         ),
                                         onPressed: () {
                                           dispatch(NavigateTo(Page.signUp));
                                         },
                                         child: const Text(
                                           'Register now',
-                                          style: TextStyle(color: Colors.white, fontSize: 18),
                                         ),
                                       ),
                                     ],
@@ -115,7 +111,6 @@ class SignInView extends View<SignInMessage, SignInModel, SignInUpdate> {
                                   Container(
                                     height: 30,
                                     width: 1,
-                                    color: Colors.grey,
                                   ),
                                   GestureDetector(
                                     onTap: () {},
@@ -135,7 +130,6 @@ class SignInView extends View<SignInMessage, SignInModel, SignInUpdate> {
                         child: TextButton(
                           style: TextButton.styleFrom(
                             padding: const EdgeInsets.all(15),
-                            backgroundColor: Colors.blue[900],
                           ),
                           onPressed: () {},
                           child: const Text(

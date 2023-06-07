@@ -15,7 +15,6 @@ class CreateOfferView extends View<CreateOfferMessage, CreateOfferModel, CreateO
         children: [
           Text(
             'Create offer',
-            style: TextStyle(color: Colors.grey[700], fontSize: 18),
           ),
           CreateOffersForm(),
         ],
@@ -75,12 +74,8 @@ class CreateOffersFormState extends State<CreateOffersForm> {
           SizedBox(
             width: double.infinity,
             child: TextButton(
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.blue[900],
-              ),
               child: const Text(
                 'Tauschgesuch erstellen',
-                style: TextStyle(color: Colors.white, fontSize: 18),
               ),
               onPressed: () {
                 dispatch(

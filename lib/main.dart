@@ -8,10 +8,15 @@ import 'package:bloc_mvu_app/sign_up/sign_up_update.dart';
 import 'package:bloc_mvu_app/user/user_update.dart';
 import 'package:flutter/material.dart' hide View;
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter/material.dart';
+import 'package:json_theme/json_theme.dart';
+import 'package:flutter/services.dart'; // For rootBundle
+import 'dart:convert'; // For jsonDecode
 
 /// Entry widget
 class BlocMvuTestApp extends StatelessWidget {
-  const BlocMvuTestApp({Key? key}) : super(key: key);
+  final ThemeData theme;
+  const BlocMvuTestApp({Key? key, required this.theme}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => MultiBlocProvider(
@@ -27,11 +32,16 @@ class BlocMvuTestApp extends StatelessWidget {
         child: MaterialApp(
           navigatorKey: navigatorKey,
           title: 'LoginApp',
+          theme: theme,
           home: const NavigationView(),
         ),
       );
 }
 
-void main() {
-  runApp(const BlocMvuTestApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final themeStr = await rootBundle.loadString('assets/appainter_theme.json');
+  final themeJson = jsonDecode(themeStr);
+  final theme = ThemeDecoder.decodeThemeData(themeJson)!;
+  runApp(BlocMvuTestApp(theme: theme));
 }
