@@ -10,7 +10,6 @@ import 'package:flutter/material.dart' hide Page, View;
 class SignInView extends View<SignInMessage, SignInModel, SignInUpdate> {
   const SignInView({Key? key}) : super(key: key);
 
-
   @override
   Widget buildView(SignInModel model) => Scaffold(
         body: SafeArea(

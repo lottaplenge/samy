@@ -30,6 +30,7 @@ class NavigationView extends View<NavigationMessage, NavigationModel, Navigation
           actions: [
             IconButton(
               icon: const Icon(Icons.table_rows),
+              tooltip: 'Menu',
               onPressed: () => dispatch(ToggleMainMenu()),
             ),
           ],
