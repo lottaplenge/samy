@@ -15,6 +15,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.0
+  flutter_svg: 2.0.6
   flutter_map: ^1.1.1
   http: ^0.13.4
   json_theme: ^5.0.2+6
@@ -33,6 +34,7 @@ flutter:
   assets:
     - assets/
     - assets/appainter_theme.json
+    - assets/logo.svg
 
 msix_config:
   display_name: BLoC+MVU Kickstarter App
