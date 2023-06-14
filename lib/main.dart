@@ -1,6 +1,5 @@
 import 'dart:convert'; // For jsonDecode
 
-import 'package:flutter/material.dart' hide View;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart'; // For rootBundle
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -67,6 +66,6 @@ class SamyAppState extends State<ThemedSamyApp> {
         );
 }
 
-void main() async {
+void main() {
   runApp(SamyApp());
 }
