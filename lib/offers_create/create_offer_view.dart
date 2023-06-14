@@ -6,7 +6,8 @@ import 'package:bloc_mvu_app/offers_create/create_offer_update.dart';
 import 'package:flutter/material.dart' hide View;
 
 // ignore: must_be_immutable
-class CreateOfferView extends View<CreateOfferMessage, CreateOfferModel, CreateOfferUpdate> {
+class CreateOfferView
+    extends View<CreateOfferMessage, CreateOfferModel, CreateOfferUpdate> {
   const CreateOfferView({Key? key}) : super(key: key);
 
   @override
@@ -34,6 +35,10 @@ class CreateOffersFormState extends State<CreateOffersForm> {
   SchoolType selectedSchooltype = SchoolType.Grundschule;
   int selectedClassNo = 1;
   SchoolName selectedSchoolname = SchoolName.Schule1;
+  String selectedFirstSchoolday = DateTime.now() as String;
+  String selectedSchoolId = "1"; //hart gecoded
+
+  TextEditingController _dateController = TextEditingController();
 
   @override
   Widget build(BuildContext context) => Column(
@@ -43,7 +48,10 @@ class CreateOffersFormState extends State<CreateOffersForm> {
               Padding(
                 padding: const EdgeInsets.all(30),
                 child: DropdownButton<SchoolType>(
-                  items: SchoolType.values.map((type) => DropdownMenuItem(value: type, child: Text(type.name))).toList(),
+                  items: SchoolType.values
+                      .map((type) =>
+                          DropdownMenuItem(value: type, child: Text(type.name)))
+                      .toList(),
                   onChanged: (newItem) => setState(() {
                     selectedSchooltype = newItem!;
                   }),
@@ -53,7 +61,10 @@ class CreateOffersFormState extends State<CreateOffersForm> {
               Padding(
                 padding: const EdgeInsets.all(30),
                 child: DropdownButton<SchoolName>(
-                  items: SchoolName.values.map((type) => DropdownMenuItem(value: type, child: Text(type.name))).toList(),
+                  items: SchoolName.values
+                      .map((type) =>
+                          DropdownMenuItem(value: type, child: Text(type.name)))
+                      .toList(),
                   onChanged: (newName) => setState(() {
                     selectedSchoolname = newName!;
                   }),
@@ -63,11 +74,39 @@ class CreateOffersFormState extends State<CreateOffersForm> {
               Padding(
                 padding: const EdgeInsets.all(30),
                 child: DropdownButton<int>(
-                  items: List<int>.generate(13, (i) => i + 1).map((no) => DropdownMenuItem(value: no, child: Text(no.toString()))).toList(),
+                  items: List<int>.generate(13, (i) => i + 1)
+                      .map((no) => DropdownMenuItem(
+                          value: no, child: Text(no.toString())))
+                      .toList(),
                   onChanged: (newNo) => setState(() {
                     selectedClassNo = newNo!;
                   }),
                   value: selectedClassNo,
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Padding(
+                padding: EdgeInsets.all(20.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const SizedBox(height: 20),
+                    TextField(
+                      controller: _dateController,
+                      decoration: InputDecoration(
+                        labelText: 'Datum',
+                      ),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        selectedFirstSchoolday = _dateController.text;
+                      },
+                      child: Text('Speichern'),
+                    ),
+                  ],
                 ),
               ),
             ],
@@ -85,9 +124,9 @@ class CreateOffersFormState extends State<CreateOffersForm> {
               onPressed: () {
                 dispatch(
                   CreateOffer(
-                    schoolType: selectedSchooltype,
-                    classNo: selectedClassNo,
-                    schoolName: selectedSchoolname,
+                    classNumber: selectedClassNo,
+                    schoolId: selectedSchoolId,
+                    firstSchoolday: selectedFirstSchoolday,
                   ),
                 );
               },
