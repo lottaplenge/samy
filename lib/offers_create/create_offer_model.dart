@@ -1,6 +1,3 @@
-import 'package:bloc_mvu_app/user/user_model.dart';
-import 'package:dartz/dartz.dart';
-
 class CreateOfferModel {
   CreateOfferModel();
 

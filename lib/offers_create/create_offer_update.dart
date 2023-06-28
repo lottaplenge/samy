@@ -24,7 +24,7 @@ class CreateOfferUpdate extends Update<CreateOfferMessage, CreateOfferModel> {
   }
 }
 Future<Offer> addOfferToBackend(Offer offer, User user) async {
-  final localUrl = Uri.parse('http://localhost:3000/sign-up'); //richtiger Link fehlt
+  final localUrl = Uri.parse('http://localhost:3000/offers');
 
   final response = await http.post(
       localUrl,
