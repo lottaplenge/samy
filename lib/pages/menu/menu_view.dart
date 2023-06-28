@@ -1,18 +1,19 @@
 import 'package:bloc_mvu_app/logout/logout_message.dart';
-import 'package:bloc_mvu_app/mvu/messaging.dart';
-import 'package:bloc_mvu_app/mvu/view_without_model.dart';
-import 'package:bloc_mvu_app/navigation/navigation_messages.dart';
-import 'package:bloc_mvu_app/navigation/navigation_model.dart';
-import 'package:bloc_mvu_app/user/panel_view.dart';
+import 'package:samy_app/mvu/messaging.dart';
+import 'package:samy_app/mvu/view_without_model.dart';
+import 'package:samy_app/navigation/navigation_messages.dart';
+import 'package:samy_app/navigation/navigation_model.dart';
+import 'package:samy_app/user/panel_view.dart';
 import 'package:flutter/material.dart' hide Page, View;
+import 'package:samy_app/util/utils.dart';
 
-Widget _button(String title, Icon icon, Page target) => ListTile(
+Widget _button(Page page, Icon icon) => ListTile(
       onTap: () {
         dispatch(NavigateUp());
-        dispatch(NavigateTo(target));
+        dispatch(NavigateTo(page));
       },
       leading: icon,
-      title: Text(title),
+      title: Text(prettyName(page)),
     );
 
 Widget _logoutButton(String title, Icon icon, Page target) => ListTile(
@@ -33,16 +34,17 @@ class MenuView extends ViewWithoutModel {
           // Remove padding
           padding: EdgeInsets.zero,
           children: [
+            exampleSvg,
             const UserPanelView(
 
             ),
-            _button('SignUp', const Icon(Icons.login), Page.signUp),
-            _button('SignIn', const Icon(Icons.app_registration), Page.signIn),
+            _button(Page.signUp, const Icon(Icons.login)),
+            _button(Page.signIn, const Icon(Icons.app_registration)),
             _logoutButton('Logout', const Icon(Icons.logout),Page.signIn),
             const Divider(),
-            _button('User', const Icon(Icons.supervised_user_circle), Page.user),
-            _button('Create Offer', const Icon(Icons.note_add), Page.offers_create),
-            _button('View Offers', const Icon(Icons.school), Page.offers),
+            _button(Page.user, const Icon(Icons.supervised_user_circle)),
+            _button(Page.offers_create, const Icon(Icons.note_add)),
+            _button(Page.offers, const Icon(Icons.school)),
           ],
         ),
       );

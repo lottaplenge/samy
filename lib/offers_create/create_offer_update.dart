@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:bloc_mvu_app/mvu/update.dart';
-import 'package:bloc_mvu_app/offers_create/create_offer_messages.dart';
-import 'package:bloc_mvu_app/offers_create/create_offer_model.dart';
+import 'package:samy_app/mvu/update.dart';
+import 'package:samy_app/offers_create/create_offer_messages.dart';
+import 'package:samy_app/offers_create/create_offer_model.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
