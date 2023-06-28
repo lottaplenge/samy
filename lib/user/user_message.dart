@@ -12,10 +12,11 @@ class CreateUser extends UserMessage {
   final User user;
 }
 
-class ExchangeLoggedInUser extends UserMessage {
-  ExchangeLoggedInUser(this.user);
+class SetUserAndToken extends UserMessage {
+  SetUserAndToken(this.user, this.token);
 
   final User user;
+  final String token;
 }
 
 class ChangeUser extends UserMessage {}

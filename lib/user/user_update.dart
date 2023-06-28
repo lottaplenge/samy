@@ -19,15 +19,11 @@ class UserUpdate extends Update<UserMessage, UserModel> {
   @override
   Option<UserModel> processMessage(UserMessage message, UserModel model) {
     if (message is CreateUser) {
-      addUserToBackend(message.user)
-          .then((user) => dispatch(ExchangeLoggedInUser(user)))
-          .catchError((dynamic error) {
-        print('Error: $error');
-      });
+      addUserToBackend(message.user);
       return const None();
     }
 
-    if (message is ExchangeLoggedInUser) {
+    if (message is SetUserAndToken) {
       return Some(model.copyWith(Some(message.user)));
     }
     /*if (message is UpdateUserInfo) {
@@ -42,13 +38,13 @@ class UserUpdate extends Update<UserMessage, UserModel> {
     return const None();
   }
 
-  Future<User> addUserToBackend(User user) async {
+  void addUserToBackend(User user) async {
     final url = Uri.parse('https://samy-backend-ybaxbalfwa-ey.a.run.app/api/sign-up');
     final localUrl = Uri.parse('http://localhost:3000/sign-up');
 
     final response = await http.post(
       localUrl,
-      headers: {'Content-Type': 'application/json', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDY0ZDhkN2M4ZTNkM2I1YzEyNjU2ZTciLCJpYXQiOjE2ODQzMzA3MTEsImV4cCI6MTY4NDQxNzExMX0.CyT913nzztrBH9fOaL3f3mzAz94qGKDzgFg6pMTmIPw'},
+      headers: {'Content-Type': 'application/json'},
       body: json.encode({
         'firstName': user.firstName,
         'lastName': user.lastName,
@@ -64,6 +60,10 @@ class UserUpdate extends Update<UserMessage, UserModel> {
     print('Response status: ${response.statusCode}');
     print('Response body: ${response.body}');
 
-    return User.fromJSON(jsonDecode(response.body) as Map<String, dynamic>); // data noch editieren!
+    final responseMap = jsonDecode(response.body) as Map<String, dynamic>;
+    final cookie = response.headers ['set-cookie'];
+    if(cookie!=null) {
+      dispatch(SetUserAndToken(User.fromJSON(responseMap),cookie));
+    }
   }
 }

@@ -1,3 +1,4 @@
+import 'package:bloc_mvu_app/logout/logout_message.dart';
 import 'package:bloc_mvu_app/mvu/messaging.dart';
 import 'package:bloc_mvu_app/mvu/view_without_model.dart';
 import 'package:bloc_mvu_app/navigation/navigation_messages.dart';
@@ -14,6 +15,15 @@ Widget _button(String title, Icon icon, Page target) => ListTile(
       title: Text(title),
     );
 
+Widget _logoutButton(String title, Icon icon, Page target) => ListTile(
+  onTap: () {
+    dispatch(LogoutUser());
+    dispatch(NavigateTo(target));
+  },
+  leading: icon,
+  title: Text(title),
+);
+
 class MenuView extends ViewWithoutModel {
   const MenuView({Key? key}) : super(key: key);
 
@@ -28,6 +38,7 @@ class MenuView extends ViewWithoutModel {
             ),
             _button('SignUp', const Icon(Icons.login), Page.signUp),
             _button('SignIn', const Icon(Icons.app_registration), Page.signIn),
+            _logoutButton('Logout', const Icon(Icons.logout),Page.signIn),
             const Divider(),
             _button('User', const Icon(Icons.supervised_user_circle), Page.user),
             _button('Create Offer', const Icon(Icons.note_add), Page.offers_create),

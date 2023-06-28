@@ -13,6 +13,7 @@ class UserModel {
   });
 
   final Option<User> user;
+  //final Option<String> token;
 
   UserModel copyWith(
     Option<User>? user,

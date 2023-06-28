@@ -1,4 +1,5 @@
 import 'package:bloc_mvu_app/config/config_update.dart';
+import 'package:bloc_mvu_app/logout/logout_update.dart';
 import 'package:bloc_mvu_app/navigation/navigation_update.dart';
 import 'package:bloc_mvu_app/navigation/navigation_view.dart';
 import 'package:bloc_mvu_app/offers/offers_update.dart';
@@ -23,6 +24,7 @@ class BlocMvuTestApp extends StatelessWidget {
           BlocProvider(create: SignUpUpdate.of),
           BlocProvider(create: OffersUpdate.of),
           BlocProvider(create: CreateOfferUpdate.of),
+          BlocProvider(create: LogoutUpdate.of, lazy:false),
         ],
         child: MaterialApp(
           navigatorKey: navigatorKey,
