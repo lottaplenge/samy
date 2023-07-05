@@ -62,7 +62,7 @@ class CreateOffersFormState extends State<CreateOffersForm> {
                           selectedSchooltype = newItem ?? defaultValue;
                         });
                       },
-                      value: selectedSchooltype ?? defaultValue,
+                      value: selectedSchooltype,
                     ),
                   ),
                   Padding(
@@ -77,7 +77,7 @@ class CreateOffersFormState extends State<CreateOffersForm> {
                           selectedSchoolname = newName ?? defaultValue;
                         });
                       },
-                      value: selectedSchoolname ?? defaultValue,
+                      value: selectedSchoolname,
                     ),
                   ),
                   Padding(
