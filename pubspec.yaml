@@ -36,7 +36,7 @@ flutter:
     - assets/
     - assets/appainter_theme.json
     - assets/logo.svg
-    - assets/background.jpeg
+    - assets/background.jpg
 
 msix_config:
   display_name: BLoC+MVU Kickstarter App

@@ -1,3 +1,4 @@
+import 'package:google_fonts/google_fonts.dart';
 import 'package:samy_app/mvu/messaging.dart';
 import 'package:samy_app/mvu/view.dart';
 import 'package:samy_app/sign_up/sign_up_message.dart';
@@ -13,7 +14,15 @@ class SignUpView extends View<SignUpMessage, SignUpModel, SignUpUpdate> {
 
   @override
   Widget buildView(SignUpModel model) => Scaffold(
-        body: SafeArea(
+      body: Container(
+        decoration: BoxDecoration(
+        image: DecorationImage(
+        image: AssetImage("assets/background.jpg"),
+        fit: BoxFit.cover,
+      ),
+      ),
+  child:
+        SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(20),
             child: ListView(
@@ -29,13 +38,15 @@ class SignUpView extends View<SignUpMessage, SignUpModel, SignUpUpdate> {
                   height: 10,
                 ),
                 Text(
-                  'Welcome to SAMY',
+                  'Wir helfen dir bei der Suche nach einer näher gelegenen Schule, um den Schulweg deines Kindes zu erleichtern.',
+                    style: GoogleFonts.abel(fontSize: 16),
                 ),
                 const SizedBox(
                   height: 10,
                 ),
                 Text(
-                  'Sign up to find the perfect place for your youngster',
+                  'Registriere dich, um dein Tauschangebot aufzugeben und den geeigneten Schulplatz zu finden.',
+                    style: GoogleFonts.abel(fontSize: 20),
                 ),
                 const SizedBox(
                   height: 15,
@@ -44,14 +55,23 @@ class SignUpView extends View<SignUpMessage, SignUpModel, SignUpUpdate> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     TextField(
-                      decoration: const InputDecoration(labelText: 'Surname', border: OutlineInputBorder()),
+                      decoration: const InputDecoration(
+                          labelText: 'Surname',
+                          border: OutlineInputBorder(),
+                          filled: true,
+                          fillColor: Colors.white,),
                       controller: model.firstNameController,
                     ),
                     const SizedBox(
                       height: 10,
                     ),
                     TextField(
-                      decoration: const InputDecoration(labelText: 'Lastname', border: OutlineInputBorder()),
+                      decoration: const InputDecoration(
+                          labelText: 'Lastname',
+                          border: OutlineInputBorder(),
+                          filled: true,
+                          fillColor: Colors.white,
+                      ),
                       controller: model.lastNameController,
                     ),
                     const SizedBox(
@@ -62,7 +82,12 @@ class SignUpView extends View<SignUpMessage, SignUpModel, SignUpUpdate> {
                         Expanded(
                           flex: 30,
                           child: TextField(
-                            decoration: const InputDecoration(labelText: 'Street', border: OutlineInputBorder()),
+                            decoration: const InputDecoration(
+                                labelText: 'Street',
+                                border: OutlineInputBorder(),
+                                filled: true,
+                                fillColor: Colors.white,
+                            ),
                             controller: model.streetController,
                           ),
                         ),
@@ -72,7 +97,12 @@ class SignUpView extends View<SignUpMessage, SignUpModel, SignUpUpdate> {
                         Expanded(
                           flex: 9,
                           child: TextField(
-                            decoration: const InputDecoration(labelText: 'Streetnumber', border: OutlineInputBorder()),
+                            decoration: const InputDecoration(
+                                labelText: 'Streetnumber',
+                                border: OutlineInputBorder(),
+                                filled: true,
+                                fillColor: Colors.white,
+                            ),
                             controller: model.streetNumberController,
                           ),
                         ),
@@ -88,21 +118,36 @@ class SignUpView extends View<SignUpMessage, SignUpModel, SignUpUpdate> {
                       height: 10,
                     ),
                     TextField(
-                      decoration: const InputDecoration(labelText: 'Postcode', border: OutlineInputBorder()),
+                      decoration: const InputDecoration(
+                          labelText: 'Postcode',
+                          border: OutlineInputBorder(),
+                          filled: true,
+                          fillColor: Colors.white,
+                      ),
                       controller: model.postCodeController,
                     ),
                     const SizedBox(
                       height: 10,
                     ),
                     TextField(
-                      decoration: const InputDecoration(labelText: 'City', border: OutlineInputBorder()),
+                      decoration: const InputDecoration(
+                          labelText: 'City',
+                          border: OutlineInputBorder(),
+                          filled: true,
+                          fillColor: Colors.white,
+                      ),
                       controller: model.cityController,
                     ),
                     const SizedBox(
                       height: 10,
                     ),
                     TextField(
-                      decoration: const InputDecoration(labelText: 'E-Mail', border: OutlineInputBorder()),
+                      decoration: const InputDecoration(
+                          labelText: 'E-Mail',
+                          border: OutlineInputBorder(),
+                          filled: true,
+                          fillColor: Colors.white,
+                      ),
                       controller: model.mailController,
                     ),
                     const SizedBox(
@@ -114,6 +159,8 @@ class SignUpView extends View<SignUpMessage, SignUpModel, SignUpUpdate> {
                       decoration: InputDecoration(
                         labelText: 'Password',
                         border: const OutlineInputBorder(),
+                        filled: true,
+                        fillColor: Colors.white,
                         suffixIcon: IconButton(
                           icon: Icon(model.obscurePassword ? Icons.visibility_off : Icons.visibility),
                           onPressed: () {
@@ -129,8 +176,8 @@ class SignUpView extends View<SignUpMessage, SignUpModel, SignUpUpdate> {
                 ),
                 SizedBox(
                   width: double.infinity,
-                  child: TextButton(
-                    style: TextButton.styleFrom(
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.all(15),
                     ),
                     onPressed: () {
@@ -155,7 +202,7 @@ class SignUpView extends View<SignUpMessage, SignUpModel, SignUpUpdate> {
                       // NavigateTo anderer Page
                     },
                     child: const Text(
-                      'Sign Up',
+                      'Registrieren',
                     ),
                   ),
                 ),
@@ -163,5 +210,6 @@ class SignUpView extends View<SignUpMessage, SignUpModel, SignUpUpdate> {
             ),
           ),
         ),
-      );
+      )
+  );
 }

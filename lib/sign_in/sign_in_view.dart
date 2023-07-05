@@ -13,7 +13,14 @@ class SignInView extends View<SignInMessage, SignInModel, SignInUpdate> {
 
   @override
   Widget buildView(SignInModel model) => Scaffold(
-        body: SafeArea(
+        body: Container(
+            decoration: BoxDecoration(
+            image: DecorationImage(
+            image: AssetImage("assets/background.jpg"),
+             fit: BoxFit.cover,
+             ),
+             ),
+  child: SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(20),
             child: CustomScrollView(
@@ -34,15 +41,16 @@ class SignInView extends View<SignInMessage, SignInModel, SignInUpdate> {
                             height: 10,
                           ),
                           Text(
-                            'Welcome to SAMY',
-                            style: GoogleFonts.abel(fontSize: 25
+                            'Willkommen bei SAMY',
+                            style: GoogleFonts.abel(fontSize: 35
                             )),
                           const SizedBox(
                             height: 10,
                           ),
                           Text(
-                            'Log in to find the perfect place for your youngster',
-                          ),
+                            'Melde dich an, um das geeignete Tauschangebot zu finden.',
+                              style: GoogleFonts.abel(fontSize: 25
+                              )),
                         ],
                       ),
                       const SizedBox(
@@ -54,7 +62,12 @@ class SignInView extends View<SignInMessage, SignInModel, SignInUpdate> {
                           Column(
                             children: <Widget>[
                               const TextField(
-                                decoration: InputDecoration(labelText: 'Email', border: OutlineInputBorder()),
+                                decoration: InputDecoration(
+                                    labelText: 'E-Mail',
+                                    border: OutlineInputBorder(),
+                                    filled: true,
+                                    fillColor: Colors.white,
+                                ),
                               ),
                               const SizedBox(
                                 height: 10,
@@ -62,7 +75,9 @@ class SignInView extends View<SignInMessage, SignInModel, SignInUpdate> {
                               TextField(
                                 obscureText: model.obscurePassword,
                                 decoration: InputDecoration(
-                                  labelText: 'Password',
+                                  filled: true,
+                                  fillColor: Colors.white,
+                                  labelText: 'Passwort',
                                   border: const OutlineInputBorder(),
                                   suffixIcon: IconButton(
                                     icon: Icon(model.obscurePassword ? Icons.visibility_off : Icons.visibility),
@@ -80,7 +95,7 @@ class SignInView extends View<SignInMessage, SignInModel, SignInUpdate> {
                                 children: <Widget>[
                                   Row(
                                     children: <Widget>[
-                                      TextButton(
+                                      ElevatedButton(
                                         style: TextButton.styleFrom(
                                           padding: const EdgeInsets.all(15),
                                         ),
@@ -88,7 +103,7 @@ class SignInView extends View<SignInMessage, SignInModel, SignInUpdate> {
                                           dispatch(NavigateTo(Page.signUp));
                                         },
                                         child: const Text(
-                                          'Register now',
+                                          'Noch kein Profil? Registriere dich!',
                                         ),
                                       ),
                                     ],
@@ -97,9 +112,9 @@ class SignInView extends View<SignInMessage, SignInModel, SignInUpdate> {
                                     height: 30,
                                     width: 1,
                                   ),
-                                  GestureDetector(
-                                    onTap: () {},
-                                    child: const Text('FORGOT PASSWORD?'),
+                                  ElevatedButton(
+                                    onPressed: () {},
+                                    child: const Text('Passwort vergessen?'),
                                   )
                                 ],
                               )
@@ -112,13 +127,13 @@ class SignInView extends View<SignInMessage, SignInModel, SignInUpdate> {
                       ),
                       SizedBox(
                         width: double.infinity,
-                        child: TextButton(
+                        child: ElevatedButton(
                           style: TextButton.styleFrom(
                             padding: const EdgeInsets.all(15),
                           ),
                           onPressed: () {},
                           child: const Text(
-                            'Login',
+                            'Anmelden',
                             style: TextStyle(color: Colors.white, fontSize: 18),
                           ),
                         ),
@@ -130,5 +145,6 @@ class SignInView extends View<SignInMessage, SignInModel, SignInUpdate> {
             ),
           ),
         ),
-      );
+      )
+  );
 }

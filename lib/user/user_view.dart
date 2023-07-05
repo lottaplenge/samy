@@ -15,7 +15,7 @@ class UserView extends View<UserMessage, UserModel, UserUpdate> {
         body: Container(
         decoration: BoxDecoration(
         image: DecorationImage(
-        image: AssetImage('assets/Hintergrundbild.jpeg'),
+        image: AssetImage('assets/background.jpg'),
         fit: BoxFit.cover,
           ),
         ),
