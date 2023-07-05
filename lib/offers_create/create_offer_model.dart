@@ -1,6 +1,5 @@
 class CreateOfferModel {
   CreateOfferModel();
-
   CreateOfferModel copyWith() => CreateOfferModel();
 }
 

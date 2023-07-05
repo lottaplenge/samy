@@ -33,9 +33,9 @@ class CreateOffersFormState extends State<CreateOffersForm> {
   CreateOffersFormState();
 
   SchoolType selectedSchooltype = SchoolType.Grundschule;
-  int selectedClassNo = 1;
+  int selectedClassNo =1;
   SchoolName selectedSchoolname = SchoolName.Schule1;
-  String selectedFirstSchoolday = DateTime.now() as String;
+  String selectedFirstSchoolday = DateTime.now().toString();
   String selectedSchoolId = "1"; //hart gecoded
 
   TextEditingController _dateController = TextEditingController();
@@ -89,11 +89,10 @@ class CreateOffersFormState extends State<CreateOffersForm> {
           Row(
             children: [
               Padding(
-                padding: EdgeInsets.all(20.0),
+                padding: EdgeInsets.fromLTRB(20.0, 40.0, 20.0, 20.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const SizedBox(height: 20),
                     TextField(
                       controller: _dateController,
                       decoration: InputDecoration(
