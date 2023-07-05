@@ -24,17 +24,6 @@ class SignUpView extends View<SignUpMessage, SignUpModel, SignUpUpdate> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Container(
-                      width: 85,
-                      height: 85,
-                      alignment: Alignment.center,
-                      child: Image.asset('assets/samy_small.png'),
-                      /*decoration: BoxDecoration(
-                                  color: Colors.blue[900],
-                                  borderRadius: BorderRadius.circular(30)),*/
-                    ),
-                  ],
                 ),
                 const SizedBox(
                   height: 10,

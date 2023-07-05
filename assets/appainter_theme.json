@@ -1,68 +1,5 @@
 {
-  "appBarTheme": {
-    "actionsIconTheme": {
-      "color": "#ff004f58"
-    },
-    "iconTheme": {
-      "color": "#ff006874"
-    },
-    "titleTextStyle": {
-      "color": "#ffffffff",
-      "decoration": "none",
-      "fontFamily": "Abel_regular",
-      "fontFamilyFallback": [
-        "Abel"
-      ],
-      "fontSize": 30,
-      "fontWeight": "w400",
-      "inherit": false,
-      "letterSpacing": 0,
-      "textBaseline": "alphabetic"
-    },
-    "toolbarTextStyle": {
-      "color": "#ffffffff",
-      "decoration": "none",
-      "fontFamily": "Abel_regular",
-      "fontFamilyFallback": [
-        "Abel"
-      ],
-      "fontSize": 14,
-      "fontWeight": "w500",
-      "inherit": false,
-      "letterSpacing": 1.25,
-      "textBaseline": "alphabetic"
-    }
-  },
   "applyElevationOverlayColor": false,
-  "bottomNavigationBarTheme": {
-    "selectedItemColor": "#ff4db6ac",
-    "selectedLabelStyle": {
-      "color": "#ffffffff",
-      "decoration": "none",
-      "fontFamily": "Abel_regular",
-      "fontFamilyFallback": [
-        "Abel"
-      ],
-      "fontSize": 14,
-      "fontWeight": "w500",
-      "inherit": false,
-      "letterSpacing": 1.25,
-      "textBaseline": "alphabetic"
-    },
-    "unselectedLabelStyle": {
-      "color": "#ffffffff",
-      "decoration": "none",
-      "fontFamily": "Abel_regular",
-      "fontFamilyFallback": [
-        "Abel"
-      ],
-      "fontSize": 14,
-      "fontWeight": "w500",
-      "inherit": false,
-      "letterSpacing": 1.25,
-      "textBaseline": "alphabetic"
-    }
-  },
   "brightness": "light",
   "buttonTheme": {
     "alignedDropdown": false,
@@ -178,9 +115,6 @@
   "dialogBackgroundColor": "#ffffffff",
   "disabledColor": "#61000000",
   "dividerColor": "#1f000000",
-  "floatingActionButtonTheme": {
-    "backgroundColor": "#ff00a29c"
-  },
   "focusColor": "#1f000000",
   "highlightColor": "#66bcbcbc",
   "hintColor": "#99000000",
@@ -299,41 +233,13 @@
   "shadowColor": "#ff000000",
   "splashColor": "#66c8c8c8",
   "splashFactory": "splash",
-  "tabBarTheme": {
-    "labelStyle": {
-      "color": "#ffffffff",
-      "decoration": "none",
-      "fontFamily": "Abel_regular",
-      "fontFamilyFallback": [
-        "Abel"
-      ],
-      "fontSize": 14,
-      "fontWeight": "w500",
-      "inherit": false,
-      "letterSpacing": 0.1,
-      "textBaseline": "alphabetic"
-    },
-    "unselectedLabelStyle": {
-      "color": "#ffffffff",
-      "decoration": "none",
-      "fontFamily": "Abel_regular",
-      "fontFamilyFallback": [
-        "Abel"
-      ],
-      "fontSize": 14,
-      "fontWeight": "w500",
-      "inherit": false,
-      "letterSpacing": 0.1,
-      "textBaseline": "alphabetic"
-    }
-  },
   "textTheme": {
     "bodyLarge": {
       "color": "#dd000000",
       "decoration": "none",
-      "fontFamily": "Roboto_regular",
+      "fontFamily": "Abel_regular",
       "fontFamilyFallback": [
-        "Roboto"
+        "Abel"
       ],
       "fontSize": 16,
       "fontWeight": "w400",
@@ -344,9 +250,9 @@
     "bodyMedium": {
       "color": "#dd000000",
       "decoration": "none",
-      "fontFamily": "Roboto_regular",
+      "fontFamily": "Abel_regular",
       "fontFamilyFallback": [
-        "Roboto"
+        "Abel"
       ],
       "fontSize": 14,
       "fontWeight": "w400",
@@ -357,9 +263,9 @@
     "bodySmall": {
       "color": "#8a000000",
       "decoration": "none",
-      "fontFamily": "Roboto_regular",
+      "fontFamily": "Abel_regular",
       "fontFamilyFallback": [
-        "Roboto"
+        "Abel"
       ],
       "fontSize": 12,
       "fontWeight": "w400",
@@ -370,9 +276,9 @@
     "displayLarge": {
       "color": "#8a000000",
       "decoration": "none",
-      "fontFamily": "Roboto_300",
+      "fontFamily": "Abel_regular",
       "fontFamilyFallback": [
-        "Roboto"
+        "Abel"
       ],
       "fontSize": 96,
       "fontWeight": "w300",
@@ -383,9 +289,9 @@
     "displayMedium": {
       "color": "#8a000000",
       "decoration": "none",
-      "fontFamily": "Roboto_300",
+      "fontFamily": "Abel_regular",
       "fontFamilyFallback": [
-        "Roboto"
+        "Abel"
       ],
       "fontSize": 60,
       "fontWeight": "w300",
@@ -396,9 +302,9 @@
     "displaySmall": {
       "color": "#8a000000",
       "decoration": "none",
-      "fontFamily": "Roboto_regular",
+      "fontFamily": "Abel_regular",
       "fontFamilyFallback": [
-        "Roboto"
+        "Abel"
       ],
       "fontSize": 48,
       "fontWeight": "w400",
@@ -409,9 +315,9 @@
     "headlineLarge": {
       "color": "#8a000000",
       "decoration": "none",
-      "fontFamily": "Roboto_regular",
+      "fontFamily": "Abel_regular",
       "fontFamilyFallback": [
-        "Roboto"
+        "Abel"
       ],
       "fontSize": 40,
       "fontWeight": "w400",
@@ -422,9 +328,9 @@
     "headlineMedium": {
       "color": "#8a000000",
       "decoration": "none",
-      "fontFamily": "Roboto_regular",
+      "fontFamily": "Abel_regular",
       "fontFamilyFallback": [
-        "Roboto"
+        "Abel"
       ],
       "fontSize": 34,
       "fontWeight": "w400",
@@ -435,9 +341,9 @@
     "headlineSmall": {
       "color": "#dd000000",
       "decoration": "none",
-      "fontFamily": "Roboto_regular",
+      "fontFamily": "Abel_regular",
       "fontFamilyFallback": [
-        "Roboto"
+        "Abel"
       ],
       "fontSize": 24,
       "fontWeight": "w400",
@@ -448,9 +354,9 @@
     "labelLarge": {
       "color": "#dd000000",
       "decoration": "none",
-      "fontFamily": "Roboto_500",
+      "fontFamily": "Abel_regular",
       "fontFamilyFallback": [
-        "Roboto"
+        "Abel"
       ],
       "fontSize": 14,
       "fontWeight": "w500",
@@ -461,9 +367,9 @@
     "labelMedium": {
       "color": "#ff000000",
       "decoration": "none",
-      "fontFamily": "Roboto_regular",
+      "fontFamily": "Abel_regular",
       "fontFamilyFallback": [
-        "Roboto"
+        "Abel"
       ],
       "fontSize": 11,
       "fontWeight": "w400",
@@ -474,9 +380,9 @@
     "labelSmall": {
       "color": "#ff000000",
       "decoration": "none",
-      "fontFamily": "Roboto_regular",
+      "fontFamily": "Abel_regular",
       "fontFamilyFallback": [
-        "Roboto"
+        "Abel"
       ],
       "fontSize": 10,
       "fontWeight": "w400",
@@ -487,9 +393,9 @@
     "titleLarge": {
       "color": "#dd000000",
       "decoration": "none",
-      "fontFamily": "Roboto_500",
+      "fontFamily": "Abel_regular",
       "fontFamilyFallback": [
-        "Roboto"
+        "Abel"
       ],
       "fontSize": 20,
       "fontWeight": "w500",
@@ -500,9 +406,9 @@
     "titleMedium": {
       "color": "#dd000000",
       "decoration": "none",
-      "fontFamily": "Roboto_regular",
+      "fontFamily": "Abel_regular",
       "fontFamilyFallback": [
-        "Roboto"
+        "Abel"
       ],
       "fontSize": 16,
       "fontWeight": "w400",
@@ -513,9 +419,9 @@
     "titleSmall": {
       "color": "#ff000000",
       "decoration": "none",
-      "fontFamily": "Roboto_500",
+      "fontFamily": "Abel_regular",
       "fontFamilyFallback": [
-        "Roboto"
+        "Abel"
       ],
       "fontSize": 14,
       "fontWeight": "w500",

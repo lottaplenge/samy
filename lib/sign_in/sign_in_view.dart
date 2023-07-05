@@ -6,6 +6,7 @@ import 'package:samy_app/sign_in/sign_in_message.dart';
 import 'package:samy_app/sign_in/sign_in_model.dart';
 import 'package:samy_app/sign_in/sign_in_update.dart';
 import 'package:flutter/material.dart' hide Page, View;
+import 'package:google_fonts/google_fonts.dart';
 
 class SignInView extends View<SignInMessage, SignInModel, SignInUpdate> {
   const SignInView({Key? key}) : super(key: key);
@@ -28,29 +29,14 @@ class SignInView extends View<SignInMessage, SignInModel, SignInUpdate> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Container(
-                                width: 85,
-                                height: 85,
-                                color: Colors.grey[200],
-                                alignment: Alignment.center,
-                                child: Image.asset('assets/samy_small.png'),
-                                /*decoration: BoxDecoration(
-                                    color: Colors.blue[900],
-                                    borderRadius: BorderRadius.circular(30)),*/
-                              ),
-                              const Icon(
-                                Icons.settings,
-                                size: 40,
-                              )
-                            ],
                           ),
                           const SizedBox(
                             height: 10,
                           ),
                           Text(
                             'Welcome to SAMY',
-                          ),
+                            style: GoogleFonts.abel(fontSize: 25
+                            )),
                           const SizedBox(
                             height: 10,
                           ),
