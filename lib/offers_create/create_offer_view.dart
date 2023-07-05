@@ -42,108 +42,102 @@ class CreateOffersFormState extends State<CreateOffersForm> {
   TextEditingController _dateController = TextEditingController();
 
   @override
-  Widget build(BuildContext context) => SizedBox(
-        width: 200.0,
-        height: 300.0,
-        child: Scaffold(
-          body: Column(
+  Widget build(BuildContext context) => Column(
+        children: [
+          Row(
             children: [
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(30),
-                    child: DropdownButton<SchoolType>(
-                      items: SchoolType.values
-                          .map((type) => DropdownMenuItem(
-                              value: type, child: Text(type.name)))
-                          .toList(),
-                      onChanged: (newItem) {
-                        setState(() {
-                          selectedSchooltype = newItem ?? defaultValue;
-                        });
-                      },
-                      value: selectedSchooltype,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(30),
-                    child: DropdownButton<SchoolName>(
-                      items: SchoolName.values
-                          .map((type) => DropdownMenuItem(
-                              value: type, child: Text(type.name)))
-                          .toList(),
-                      onChanged: (newName) {
-                        setState(() {
-                          selectedSchoolname = newName ?? defaultValue;
-                        });
-                      },
-                      value: selectedSchoolname,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(30),
-                    child: DropdownButton<int>(
-                      items: List<int>.generate(13, (i) => i + 1)
-                          .map((no) => DropdownMenuItem(
-                              value: no, child: Text(no.toString())))
-                          .toList(),
-                      onChanged: (newNo) {
-                        setState(() {
-                          selectedClassNo = newNo ?? defaultValue;
-                        });
-                      },
-                    ),
-                  ),
-                ],
-              ),
               Padding(
-                padding: EdgeInsets.fromLTRB(20.0, 40.0, 20.0, 20.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      width: 200.0,
-                      height: 100.0,
-                      child: TextField(
-                        controller: _dateController,
-                        decoration: InputDecoration(
-                          enabled: true,
-                          labelText: 'Datum',
-                        ),
-                      ),
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        selectedFirstSchoolday = _dateController.text;
-                      },
-                      child: Text('Speichern'),
-                    ),
-                  ],
+                padding: const EdgeInsets.all(30),
+                child: DropdownButton<SchoolType>(
+                  items: SchoolType.values
+                      .map((type) =>
+                          DropdownMenuItem(value: type, child: Text(type.name)))
+                      .toList(),
+                  onChanged: (newItem) {
+                    setState(() {
+                      selectedSchooltype = newItem ?? defaultValue;
+                    });
+                  },
+                  value: selectedSchooltype,
                 ),
               ),
-              SizedBox(
-                width: double.infinity,
-                child: TextButton(
-                  style: TextButton.styleFrom(
-                    backgroundColor: Colors.blue[900],
-                  ),
-                  child: const Text(
-                    'Tauschgesuch erstellen',
-                    style: TextStyle(color: Colors.white, fontSize: 18),
-                  ),
-                  onPressed: () {
-                    dispatch(
-                      CreateOffer(
-                        classNumber: selectedClassNo,
-                        schoolId: selectedSchoolId,
-                        firstSchoolday: selectedFirstSchoolday,
-                      ),
-                    );
+              Padding(
+                padding: const EdgeInsets.all(30),
+                child: DropdownButton<SchoolName>(
+                  items: SchoolName.values
+                      .map((type) =>
+                          DropdownMenuItem(value: type, child: Text(type.name)))
+                      .toList(),
+                  onChanged: (newName) {
+                    setState(() {
+                      selectedSchoolname = newName ?? defaultValue;
+                    });
+                  },
+                  value: selectedSchoolname,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(30),
+                child: DropdownButton<int>(
+                  items: List<int>.generate(13, (i) => i + 1)
+                      .map((no) => DropdownMenuItem(
+                          value: no, child: Text(no.toString())))
+                      .toList(),
+                  onChanged: (newNo) {
+                    setState(() {
+                      selectedClassNo = newNo ?? defaultValue;
+                    });
                   },
                 ),
               ),
             ],
           ),
-        ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(20.0, 40.0, 20.0, 20.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  width: 200.0,
+                  height: 100.0,
+                  child: TextField(
+                    controller: _dateController,
+                    decoration: InputDecoration(
+                      enabled: true,
+                      labelText: 'Datum',
+                    ),
+                  ),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    selectedFirstSchoolday = _dateController.text;
+                  },
+                  child: Text('Speichern'),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            width: double.infinity,
+            child: TextButton(
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.blue[900],
+              ),
+              child: const Text(
+                'Tauschgesuch erstellen',
+                style: TextStyle(color: Colors.white, fontSize: 18),
+              ),
+              onPressed: () {
+                dispatch(
+                  CreateOffer(
+                    classNumber: selectedClassNo,
+                    schoolId: selectedSchoolId,
+                    firstSchoolday: selectedFirstSchoolday,
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
       );
 }
