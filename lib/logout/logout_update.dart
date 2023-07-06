@@ -1,8 +1,8 @@
-import 'package:bloc_mvu_app/logging/logging.dart';
-import 'package:bloc_mvu_app/mvu/update.dart';
-import 'package:bloc_mvu_app/logout/logout_message.dart';
-import 'package:bloc_mvu_app/logout/logout_model.dart';
-import 'package:bloc_mvu_app/user/user_model.dart';
+import 'package:samy_app/logging/logging.dart';
+import 'package:samy_app/mvu/update.dart';
+import 'package:samy_app/logout/logout_message.dart';
+import 'package:samy_app/logout/logout_model.dart';
+import 'package:samy_app/user/user_model.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http hide get;

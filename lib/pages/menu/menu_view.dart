@@ -1,10 +1,11 @@
-import 'package:bloc_mvu_app/logout/logout_message.dart';
+import 'package:samy_app/logout/logout_message.dart';
 import 'package:samy_app/mvu/messaging.dart';
 import 'package:samy_app/mvu/view_without_model.dart';
 import 'package:samy_app/navigation/navigation_messages.dart';
 import 'package:samy_app/navigation/navigation_model.dart';
 import 'package:samy_app/user/panel_view.dart';
 import 'package:flutter/material.dart' hide Page, View;
+import 'package:samy_app/user/user_model.dart';
 import 'package:samy_app/util/utils.dart';
 
 Widget _button(Page page, Icon icon) => ListTile(
@@ -17,13 +18,13 @@ Widget _button(Page page, Icon icon) => ListTile(
     );
 
 Widget _logoutButton(String title, Icon icon, Page target) => ListTile(
-  onTap: () {
-    dispatch(LogoutUser());
-    dispatch(NavigateTo(target));
-  },
-  leading: icon,
-  title: Text(title),
-);
+      onTap: () {
+        dispatch(LogoutUser());
+        dispatch(NavigateTo(target));
+      },
+      leading: icon,
+      title: Text(title),
+    );
 
 class MenuView extends ViewWithoutModel {
   const MenuView({Key? key}) : super(key: key);
@@ -35,12 +36,11 @@ class MenuView extends ViewWithoutModel {
           padding: EdgeInsets.zero,
           children: [
             exampleSvg,
-            const UserPanelView(
-
-            ),
+            const UserPanelView(),
             _button(Page.signUp, const Icon(Icons.login)),
-            _button(Page.signIn, const Icon(Icons.app_registration)),
-            _logoutButton('Logout', const Icon(Icons.logout),Page.signIn),
+            UserModel.get().user.isSome()
+                ? _logoutButton('Logout', const Icon(Icons.logout), Page.signIn)
+                : _button(Page.signIn, const Icon(Icons.app_registration)),
             const Divider(),
             _button(Page.user, const Icon(Icons.supervised_user_circle)),
             _button(Page.offers_create, const Icon(Icons.note_add)),

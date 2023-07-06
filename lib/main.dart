@@ -1,4 +1,5 @@
 import 'package:samy_app/config/config_update.dart';
+import 'package:samy_app/logout/logout_update.dart';
 import 'package:samy_app/navigation/navigation_update.dart';
 import 'package:samy_app/navigation/navigation_view.dart';
 import 'package:samy_app/offers/offers_update.dart';
@@ -23,7 +24,7 @@ class SamyApp extends StatelessWidget {
           BlocProvider(create: SignUpUpdate.of),
           BlocProvider(create: OffersUpdate.of),
           BlocProvider(create: CreateOfferUpdate.of),
-          BlocProvider(create: LogoutUpdate.of, lazy:false),
+          BlocProvider(create: LogoutUpdate.of, lazy: false),
         ],
         child: MaterialApp(
           navigatorKey: navigatorKey,
