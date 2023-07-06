@@ -1,9 +1,11 @@
 import 'dart:convert';
+import 'package:samy_app/mvu/messaging.dart';
 import 'package:samy_app/mvu/update.dart';
 import 'package:samy_app/sign_up/sign_up_message.dart';
 import 'package:samy_app/sign_up/sign_up_model.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
+import 'package:samy_app/user/user_message.dart';
 import 'package:samy_app/user/user_model.dart';
 import 'package:http/http.dart' as http;
 
@@ -53,5 +55,5 @@ Future<void> signUpBackend(User user) async {
   final cookie = response.headers ['set-cookie'];
   if(cookie!=null) {
     dispatch(SetUserAndToken(User.fromJSON(responseMap), cookie));
-
+  }
 }
