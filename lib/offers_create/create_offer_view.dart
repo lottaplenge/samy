@@ -4,6 +4,10 @@ import 'package:samy_app/mvu/view.dart';
 import 'package:samy_app/offers_create/create_offer_messages.dart';
 import 'package:samy_app/offers_create/create_offer_model.dart';
 import 'package:samy_app/offers_create/create_offer_update.dart';
+const defaultSchoolType = SchoolType.Grundschule;
+const defaultSchoolName = SchoolName.Schule1;
+const defaultClassNo = 1;
+
 
 // ignore: must_be_immutable
 class CreateOfferView
@@ -32,12 +36,11 @@ class CreateOffersForm extends StatefulWidget {
 class CreateOffersFormState extends State<CreateOffersForm> {
   CreateOffersFormState();
 
-  SchoolType selectedSchooltype = SchoolType.Grundschule;
-  int selectedClassNo = 1;
-  SchoolName selectedSchoolname = SchoolName.Schule1;
+  SchoolType selectedSchooltype = defaultSchoolType;
+  int selectedClassNo = defaultClassNo;
+  SchoolName selectedSchoolname = defaultSchoolName;
   String selectedFirstSchoolday = DateTime.now().toString();
   String selectedSchoolId = "1"; //hart gecoded
-  final dynamic defaultValue = 'default';
 
   TextEditingController _dateController = TextEditingController();
 
@@ -55,7 +58,7 @@ class CreateOffersFormState extends State<CreateOffersForm> {
                       .toList(),
                   onChanged: (newItem) {
                     setState(() {
-                      selectedSchooltype = newItem ?? defaultValue;
+                      selectedSchooltype = newItem ?? defaultSchoolType;
                     });
                   },
                   value: selectedSchooltype,
@@ -70,7 +73,7 @@ class CreateOffersFormState extends State<CreateOffersForm> {
                       .toList(),
                   onChanged: (newName) {
                     setState(() {
-                      selectedSchoolname = newName ?? defaultValue;
+                      selectedSchoolname = newName ?? defaultSchoolName;
                     });
                   },
                   value: selectedSchoolname,
@@ -85,7 +88,7 @@ class CreateOffersFormState extends State<CreateOffersForm> {
                       .toList(),
                   onChanged: (newNo) {
                     setState(() {
-                      selectedClassNo = newNo ?? defaultValue;
+                      selectedClassNo = newNo ?? defaultClassNo;
                     });
                   },
                 ),
