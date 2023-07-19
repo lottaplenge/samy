@@ -56,7 +56,7 @@ class SignUpView extends View<SignUpMessage, SignUpModel, SignUpUpdate> {
                   children: <Widget>[
                     TextField(
                       decoration: const InputDecoration(
-                          labelText: 'Surname',
+                          labelText: 'Vorname',
                           border: OutlineInputBorder(),
                           filled: true,
                           fillColor: Colors.white,),
@@ -67,7 +67,7 @@ class SignUpView extends View<SignUpMessage, SignUpModel, SignUpUpdate> {
                     ),
                     TextField(
                       decoration: const InputDecoration(
-                          labelText: 'Lastname',
+                          labelText: 'Nachname',
                           border: OutlineInputBorder(),
                           filled: true,
                           fillColor: Colors.white,
@@ -83,7 +83,7 @@ class SignUpView extends View<SignUpMessage, SignUpModel, SignUpUpdate> {
                           flex: 30,
                           child: TextField(
                             decoration: const InputDecoration(
-                                labelText: 'Street',
+                                labelText: 'Straße',
                                 border: OutlineInputBorder(),
                                 filled: true,
                                 fillColor: Colors.white,
@@ -98,7 +98,7 @@ class SignUpView extends View<SignUpMessage, SignUpModel, SignUpUpdate> {
                           flex: 9,
                           child: TextField(
                             decoration: const InputDecoration(
-                                labelText: 'Streetnumber',
+                                labelText: 'Hausnummer',
                                 border: OutlineInputBorder(),
                                 filled: true,
                                 fillColor: Colors.white,
@@ -119,7 +119,7 @@ class SignUpView extends View<SignUpMessage, SignUpModel, SignUpUpdate> {
                     ),
                     TextField(
                       decoration: const InputDecoration(
-                          labelText: 'Postcode',
+                          labelText: 'Postleitzahl',
                           border: OutlineInputBorder(),
                           filled: true,
                           fillColor: Colors.white,
@@ -131,7 +131,7 @@ class SignUpView extends View<SignUpMessage, SignUpModel, SignUpUpdate> {
                     ),
                     TextField(
                       decoration: const InputDecoration(
-                          labelText: 'City',
+                          labelText: 'Ort',
                           border: OutlineInputBorder(),
                           filled: true,
                           fillColor: Colors.white,
@@ -157,7 +157,7 @@ class SignUpView extends View<SignUpMessage, SignUpModel, SignUpUpdate> {
                       obscureText: model.obscurePassword,
                       controller: model.passwordController,
                       decoration: InputDecoration(
-                        labelText: 'Password',
+                        labelText: 'Passwort',
                         border: const OutlineInputBorder(),
                         filled: true,
                         fillColor: Colors.white,

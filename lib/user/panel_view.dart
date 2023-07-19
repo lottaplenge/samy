@@ -25,7 +25,7 @@ class UserPanelView extends View<UserMessage, UserModel, UserUpdate> {
     decoration: const BoxDecoration(
       image: DecorationImage(
         fit: BoxFit.fill,
-        image: NetworkImage('https://oflutter.com/wp-content/uploads/2021/02/profile-bg3.jpg'),
+        image: AssetImage('assets/hills.jpg'),
       ),
     ),
   );

@@ -42,15 +42,15 @@ class SignInView extends View<SignInMessage, SignInModel, SignInUpdate> {
                           ),
                           Text(
                             'Willkommen bei SAMY',
-                            style: GoogleFonts.abel(fontSize: 35
-                            )),
+                            style: GoogleFonts.abel(fontSize: 35) // we need this line so flutter will load the font, feel free to fix
+                            ),
                           const SizedBox(
                             height: 10,
                           ),
                           Text(
                             'Melde dich an, um das geeignete Tauschangebot zu finden.',
-                              style: GoogleFonts.abel(fontSize: 25
-                              )),
+                              style: GoogleFonts.abel(fontSize: 25)
+                              ),
                         ],
                       ),
                       const SizedBox(
