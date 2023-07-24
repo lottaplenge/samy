@@ -47,8 +47,6 @@ class CreateOffersFormState extends State<CreateOffersForm> {
   String selectedSchoolId = "1"; //hart gecoded
   DateTime date = DateTime.timestamp();
 
-  TextEditingController _dateController = TextEditingController();
-
   @override
   Widget build(BuildContext context) => Column(
         children: [
