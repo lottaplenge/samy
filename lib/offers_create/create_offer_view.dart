@@ -54,23 +54,24 @@ class CreateOffersFormState extends State<CreateOffersForm> {
             children: [
               Padding(
                 padding: const EdgeInsets.all(30),
-                child: Column(
-                  children: [
-                    Text(
-                        'Bitte geben Sie hier den gewünschten Schultypen ein!'),
-                    DropdownButton<SchoolType>(
-                      items: SchoolType.values
-                          .map((type) => DropdownMenuItem(
-                              value: type, child: Text(type.name)))
-                          .toList(),
-                      onChanged: (newItem) {
-                        setState(() {
-                          selectedSchooltype = newItem ?? defaultSchoolType;
-                        });
-                      },
-                      value: selectedSchooltype,
-                    ),
-                  ],
+                child: Text(
+                    'Bitte geben Sie hier den gewünschten Schultypen ein!'),
+              ),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: DropdownButton<SchoolType>(
+                    items: SchoolType.values
+                        .map((type) => DropdownMenuItem(
+                            value: type, child: Text(type.name)))
+                        .toList(),
+                    onChanged: (newItem) {
+                      setState(() {
+                        selectedSchooltype = newItem ?? defaultSchoolType;
+                      });
+                    },
+                    value: selectedSchooltype,
+                  ),
                 ),
               ),
             ],
@@ -79,9 +80,12 @@ class CreateOffersFormState extends State<CreateOffersForm> {
             children: [
               Padding(
                 padding: const EdgeInsets.all(30),
-                child: Column(
-                  children: [
-                    Text('Bitte geben Sie hier den bisherigen Schulnamen ein!'),
+                child:
+                    Text('Bitte geben Sie hier den bisherigen Schulnamen ein!'),),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child:
                     DropdownButton<SchoolName>(
                       items: SchoolName.values
                           .map((type) => DropdownMenuItem(
@@ -94,7 +98,6 @@ class CreateOffersFormState extends State<CreateOffersForm> {
                       },
                       value: selectedSchoolname,
                     ),
-                  ],
                 ),
               ),
             ],
@@ -103,11 +106,13 @@ class CreateOffersFormState extends State<CreateOffersForm> {
             children: [
               Padding(
                 padding: const EdgeInsets.all(30),
-                child: Column(
-                  children: [
+                child:
                     Text(
-                        'Bitte geben Sie hier die gewünschten Schulklasse ein!'),
-                    DropdownButton<int>(
+                        'Bitte geben Sie hier die gewünschten Schulklasse ein!'),),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child:DropdownButton<int>(
                       items: List<int>.generate(13, (i) => i + 1)
                           .map((no) => DropdownMenuItem(
                               value: no, child: Text(no.toString())))
@@ -118,7 +123,6 @@ class CreateOffersFormState extends State<CreateOffersForm> {
                         });
                       },
                     ),
-                  ],
                 ),
               ),
             ],
