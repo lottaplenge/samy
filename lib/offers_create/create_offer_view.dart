@@ -54,46 +54,47 @@ class CreateOffersFormState extends State<CreateOffersForm> {
             children: [
               Padding(
                 padding: const EdgeInsets.all(30),
-                child: DropdownButton<SchoolType>(
-                  items: SchoolType.values
-                      .map((type) =>
-                          DropdownMenuItem(value: type, child: Text(type.name)))
-                      .toList(),
-                  onChanged: (newItem) {
-                    setState(() {
-                      selectedSchooltype = newItem ?? defaultSchoolType;
-                    });
-                  },
-                  value: selectedSchooltype,
+                child: Column(
+                  children: [
+                    Text(
+                        'Bitte geben Sie hier den gewünschten Schultypen ein!'),
+                    DropdownButton<SchoolType>(
+                      items: SchoolType.values
+                          .map((type) => DropdownMenuItem(
+                              value: type, child: Text(type.name)))
+                          .toList(),
+                      onChanged: (newItem) {
+                        setState(() {
+                          selectedSchooltype = newItem ?? defaultSchoolType;
+                        });
+                      },
+                      value: selectedSchooltype,
+                    ),
+                  ],
                 ),
               ),
+            ],
+          ),
+          Row(
+            children: [
               Padding(
                 padding: const EdgeInsets.all(30),
-                child: DropdownButton<SchoolName>(
-                  items: SchoolName.values
-                      .map((type) =>
-                          DropdownMenuItem(value: type, child: Text(type.name)))
-                      .toList(),
-                  onChanged: (newName) {
-                    setState(() {
-                      selectedSchoolname = newName ?? defaultSchoolName;
-                    });
-                  },
-                  value: selectedSchoolname,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(30),
-                child: DropdownButton<int>(
-                  items: List<int>.generate(13, (i) => i + 1)
-                      .map((no) => DropdownMenuItem(
-                          value: no, child: Text(no.toString())))
-                      .toList(),
-                  onChanged: (newNo) {
-                    setState(() {
-                      selectedClassNo = newNo ?? defaultClassNo;
-                    });
-                  },
+                child: Column(
+                  children: [
+                    Text('Bitte geben Sie hier den bisherigen Schulnamen ein!'),
+                    DropdownButton<SchoolName>(
+                      items: SchoolName.values
+                          .map((type) => DropdownMenuItem(
+                              value: type, child: Text(type.name)))
+                          .toList(),
+                      onChanged: (newName) {
+                        setState(() {
+                          selectedSchoolname = newName ?? defaultSchoolName;
+                        });
+                      },
+                      value: selectedSchoolname,
+                    ),
+                  ],
                 ),
               ),
             ],
@@ -105,8 +106,33 @@ class CreateOffersFormState extends State<CreateOffersForm> {
                 child: Column(
                   children: [
                     Text(
+                        'Bitte geben Sie hier die gewünschten Schulklasse ein!'),
+                    DropdownButton<int>(
+                      items: List<int>.generate(13, (i) => i + 1)
+                          .map((no) => DropdownMenuItem(
+                              value: no, child: Text(no.toString())))
+                          .toList(),
+                      onChanged: (newNo) {
+                        setState(() {
+                          selectedClassNo = newNo ?? defaultClassNo;
+                        });
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(30),
+                child: Column(
+                  children: [
+                    Text('Bitte geben Sie hier das gewünschten Datum ein!'),
+                    Text(
                       '${date.year}/${date.month}/${date.day}',
-                      style: TextStyle(fontSize: 32),
+                      style: TextStyle(fontSize: 16),
                     ),
                     const SizedBox(height: 16),
                     ElevatedButton(
