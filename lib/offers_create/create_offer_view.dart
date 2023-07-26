@@ -19,11 +19,11 @@ class CreateOfferView
         padding: const EdgeInsets.all(30),
         children: [
           Text(
-            'Erstelle ein Tauschgesuch, um den perfekten Schulplatz zu finden.',
+            'Erstellen Sie ein Tauschgesuch, um den perfekten Schulplatz zu finden.',
             style: TextStyle(fontSize: 20),
           ),
           Text(
-            'Gib dazu die derzeitige Schule, die Schulklasse und das voraussichtliche Datum des Schulwechsels an.',
+            'Geben Sie dazu die derzeitige Schule, die Schulklasse und das voraussichtliche Datum des Schulwechsels an.',
             style: TextStyle(fontSize: 16),
           ),
           CreateOffersForm(),
@@ -108,7 +108,7 @@ class CreateOffersFormState extends State<CreateOffersForm> {
                 padding: const EdgeInsets.all(30),
                 child:
                     Text(
-                        'Bitte geben Sie hier die gewünschten Schulklasse ein!'),),
+                        'Bitte geben Sie hier die gewünschte Schulklasse ein!'),),
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -122,6 +122,7 @@ class CreateOffersFormState extends State<CreateOffersForm> {
                           selectedClassNo = newNo ?? defaultClassNo;
                         });
                       },
+                    value: selectedClassNo,
                     ),
                 ),
               ),
